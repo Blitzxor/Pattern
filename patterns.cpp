@@ -74,14 +74,28 @@ void print9(int n){
         cout<<endl;
     }
 }
+void print_imp1(int n){
+    for (int i=0;i<2*n-1;i++){
+        for (int j=0;j<2*n-1;j++){
+            int ending=(2*n-2);
+            int top_dist,bottom_dist,left_dist,right_dist;
+            top_dist=i;
+            bottom_dist=j;
+            left_dist=ending-j;
+            right_dist=ending -i;
+            cout<<n-min(min(top_dist,bottom_dist),min(left_dist,right_dist))<<" ";
 
+        }
+        cout<<endl;
+    }
+}
 int main() {
     int t,n;
     cin>>t;
     for (int i =0;i<t;i++){
         int n;
         cin>>n;
-        print10(n);
+        print_imp1(n);
     }
     return 0;
 
